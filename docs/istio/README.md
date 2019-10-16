@@ -64,7 +64,8 @@ Add label `istio-injection` to namesapce default where we going to deploy our ap
 
 `kubectl label namespace default istio-injection=enabled`
 
-``` apiVersion: v1
+```
+apiVersion: v1
 kind: Service
 metadata:
   name: platform-ui
@@ -102,6 +103,7 @@ spec:
         - containerPort: 80
 ---
 ```
+```
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -135,7 +137,6 @@ spec:
         host: platform-ui
         port:
           number: 80
-```
 ```
 
 Run the above deployment file and check the running pods in default namespace
