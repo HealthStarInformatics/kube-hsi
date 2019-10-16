@@ -1,4 +1,6 @@
-# ISTIO ![](istioio-icon.svg)
+![](istioio-icon.svg)
+
+# ISTIO
 
 ## Introduction
 
@@ -56,7 +58,7 @@ prometheus-7d7b9f7844-tn5gz                        1/1     Running             0
 zipkin-5cddf8d669-8wg74                            1/1     Running             0          18s
 ```
 
-## Deploy a sample HSI app
+## Deploy an App
 
 Add label `istio-injection` to namesapce default where we going to deploy our app and create manifest file for platform-ui.
 
