@@ -1,4 +1,4 @@
-![](argocd-arch.svg)
+![](argocd-arch.png)
 # ARGOCD
 
 ## Introduction

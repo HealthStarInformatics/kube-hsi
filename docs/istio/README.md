@@ -102,6 +102,41 @@ spec:
         - containerPort: 80
 ---
 ```
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: platform-ui
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: platform-ui
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - platform-ui
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: platform-ui
+        port:
+          number: 80
+```
+```
 
 Run the above deployment file and check the running pods in default namespace
 
